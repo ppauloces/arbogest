@@ -1,7 +1,7 @@
 module.exports = {
     development: {
       username: "root",
-      password: "password", 
+      password: "kaua1630", 
       database: "arbogest_db", 
       host: "localhost", 
       dialect: "mysql",
