@@ -1,5 +1,5 @@
 import express from 'express';
-import Equipe from './models/Equipe';
+import Equipe from '../database/models/Equipe.js';
 
 const EquipesRouter = express.Router();
 

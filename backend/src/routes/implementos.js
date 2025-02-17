@@ -1,5 +1,5 @@
 import express from 'express';
-import Implemento from './models/Implemento';
+import Implemento from '../database/models/Implemento.js';
 
 const ImplementosRouter = express.Router();
 

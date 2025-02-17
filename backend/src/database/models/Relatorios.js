@@ -1,6 +1,6 @@
 import { Model, DataTypes } from 'sequelize';
 import { v4 as uuidv4 } from 'uuid';
-import Usuario from './Usuario'; 
+import Usuario from './Usuario.js'; 
 
 class Relatorio extends Model {
   static associate(models) {

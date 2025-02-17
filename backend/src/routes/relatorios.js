@@ -1,5 +1,5 @@
 import express from 'express';
-import Relatorio from './models/Relatorio';
+import Relatorio from '../database/models/Relatorios.js';
 
 const RelatoriosRouter = express.Router();
 

@@ -1,5 +1,5 @@
 import express from 'express';
-import Estoque from './models/Estoque';
+import Estoque from '../database/models/Estoque.js';
 
 const router = express.Router();
 

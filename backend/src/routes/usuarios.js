@@ -1,7 +1,7 @@
 import express from 'express';
-import Usuario from './models/Usuario';
+import Usuario from '../database/models/Usuario.js';
 
-const Usuario = express.Router();
+const UsuariosRouter = express.Router();
 
 // Criar um novo Usuário
 UsuariosRouter.post('/usuarios', async (req, res) => {
