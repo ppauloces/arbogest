@@ -4,7 +4,10 @@ import Usuario from './Usuario.js';
 
 class Relatorio extends Model {
   static associate(models) {
-    
+    Relatorio.belongsTo(models.Usuario, {
+        foreignKey: 'usuario_id',
+        as: 'usuario',
+    });
   }
 
   static initModel(sequelize) {

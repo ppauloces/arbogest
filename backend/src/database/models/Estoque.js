@@ -1,6 +1,5 @@
 import { Model, DataTypes } from "sequelize";
 import { v4 as uuidv4 } from "uuid";
-import Implemento from "./Implemento.js"; 
 
 class Estoque extends Model {
   static associate(models) {
@@ -22,7 +21,7 @@ class Estoque extends Model {
           type: DataTypes.UUID,
           allowNull: false,
           references: {
-            model: "Implementos", // Deve ser o nome da tabela, não a classe diretamente
+            model: "Implementos",
             key: "id",
           },
           onUpdate: "CASCADE",
@@ -39,7 +38,6 @@ class Estoque extends Model {
       {
         sequelize,
         modelName: "Estoque",
-        tableName: "estoques",
       }
     );
   }
