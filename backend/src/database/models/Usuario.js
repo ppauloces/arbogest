@@ -2,7 +2,7 @@ import { Model, DataTypes } from 'sequelize';
 
 class Usuario extends Model {
     static associate(models) {
-        // Aqui você pode definir as associações, se houver
+        
     }
 
     static initModel(sequelize) {

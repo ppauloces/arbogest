@@ -1,0 +1,23 @@
+{
+  "name": "api_arbogest",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "bcryptjs": "^3.0.2",
+    "express": "^4.21.2",
+    "joi": "^17.13.3",
+    "jsonwebtoken": "^9.0.2",
+    "mysql2": "^3.12.0",
+    "sequelize": "^6.37.5",
+    "uuid": "^11.1.0"
+  },
+  "scripts": {
+    "start": "node src/app.js",
+    "dev": "nodemon src/app.js"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.9",
+    "sequelize-cli": "^6.6.2"
+  }
+}
