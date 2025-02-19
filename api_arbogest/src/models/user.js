@@ -1,11 +1,16 @@
 'use strict';
-const { Model, DataTypes } = require('sequelize');  // Importação correta
+const { Model, DataTypes } = require('sequelize');
+const bcrypt = require('bcrypt');
 const { v4: uuidv4 } = require('uuid');
 
 module.exports = (sequelize) => {
   class User extends Model {
     static associate(models) {
       // Defina associações aqui, se houver
+    }
+
+    static async comparePassword(password, hashedPassword) {
+      return bcrypt.compare(password, hashedPassword);
     }
   }
 
@@ -19,7 +24,12 @@ module.exports = (sequelize) => {
       type: DataTypes.STRING
     },
     email: {
-      type: DataTypes.STRING
+      type: DataTypes.STRING,
+      unique: true,  // Garantindo que o email seja único
+      allowNull: false,  // O campo de email não pode ser nulo
+      validate: {
+        isEmail: true,  // Validando se o email tem formato correto
+      }
     },
     password: {
       type: DataTypes.STRING
@@ -50,6 +60,20 @@ module.exports = (sequelize) => {
   }, {
     sequelize,
     modelName: 'User',
+    hooks: {
+      // Antes de criar, fazer o hash da senha
+      async beforeCreate(user) {
+        if (user.password) {
+          user.password = await bcrypt.hash(user.password, 10);
+        }
+      },
+      // Antes de atualizar, fazer o hash da senha
+      async beforeUpdate(user) {
+        if (user.password) {
+          user.password = await bcrypt.hash(user.password, 10);
+        }
+      }
+    }
   });
 
   return User;

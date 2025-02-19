@@ -12,6 +12,7 @@
     "@fortawesome/fontawesome-free": "^6.7.2",
     "@tailwindcss/postcss": "^4.0.6",
     "arbogest": "file:",
+    "bcrypt": "^5.1.1",
     "bcryptjs": "^3.0.1",
     "body-parser": "^1.20.3",
     "dotenv": "^16.4.7",
