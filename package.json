@@ -4,19 +4,28 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "preview": "vite preview"
+    "dev": "concurrently \"npm run dev:vite\" \"npm run dev:backend\"",
+    "dev:vite": "vite",
+    "dev:backend": "nodemon backend/src/app.js"
   },
   "dependencies": {
     "@fortawesome/fontawesome-free": "^6.7.2",
     "@tailwindcss/postcss": "^4.0.6",
+    "arbogest": "file:",
+    "bcryptjs": "^3.0.1",
+    "body-parser": "^1.20.3",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "jsonwebtoken": "^9.0.2",
+    "mysql2": "^3.12.0",
+    "sequelize": "^6.37.5",
     "tailwindcss": "^4.0.6",
     "vue": "^3.5.13",
     "vue-router": "^4.5.0"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^5.2.1",
+    "concurrently": "^9.1.2",
     "vite": "^6.1.0"
   }
 }
